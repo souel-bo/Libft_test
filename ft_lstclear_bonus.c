@@ -6,7 +6,7 @@
 /*   By: souel-bo <souel-bo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 16:43:31 by souel-bo          #+#    #+#             */
-/*   Updated: 2024/11/08 00:58:48 by souel-bo         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:51:06 by souel-bo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*current;
 	t_list	*next_node;
 
-	if (!lst || !del || !*lst)
+	if (!lst || !*lst || !del)
 		return ;
 	current = *lst;
 	while (current != NULL)
