@@ -6,41 +6,41 @@
 /*   By: souel-bo <souel-bo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 21:08:02 by souel-bo          #+#    #+#             */
-/*   Updated: 2024/11/06 19:14:08 by souel-bo         ###   ########.fr       */
+/*   Updated: 2024/11/12 04:34:38 by souel-bo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strcpy(char *dest, const char *src)
-{
-	int	i;
+// static char	*ft_strcpy(char *dest, const char *src)
+// {
+// 	int	i;
 
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
+// 	i = 0;
+// 	while (src[i] != '\0')
+// 	{
+// 		dest[i] = src[i];
+// 		i++;
+// 	}
+// 	dest[i] = '\0';
+// 	return (dest);
+// }
 
-static char	*ft_strcat(char *dest, const char *src)
-{
-	int	i;
-	int	len;
+// static char	*ft_strcat(char *dest, const char *src)
+// {
+// 	int	i;
+// 	int	len;
 
-	len = ft_strlen(dest);
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[len + i] = src[i];
-		i++;
-	}
-	dest[len + i] = '\0';
-	return (dest);
-}
+// 	len = ft_strlen(dest);
+// 	i = 0;
+// 	while (src[i] != '\0')
+// 	{
+// 		dest[len + i] = src[i];
+// 		i++;
+// 	}
+// 	dest[len + i] = '\0';
+// 	return (dest);
+// }
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -58,7 +58,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		(sizeof(char) * (len));
 	if (!aloc_str)
 		return (NULL);
-	ft_strcpy(aloc_str, s1);
-	ft_strcat(aloc_str, s2);
+	ft_strlcpy(aloc_str, s1, ft_strlen(s1) + 1);
+	ft_strlcat(aloc_str, s2, len);
 	return (aloc_str);
 }

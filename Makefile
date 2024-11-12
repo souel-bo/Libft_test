@@ -32,9 +32,6 @@ $(NAME) : $(OBJECTS)
 bonus : $(BONUS_OBJECTS)
 	$(ARCHIVER) $(NAME) $(BONUS_OBJECTS)
 
-$(BONUS_OBJECTS) : $(BONUS_SOURCE)
-	$(CC) $(CFLAGS) -c $< -o $@
-
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 

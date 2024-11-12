@@ -6,12 +6,23 @@
 /*   By: souel-bo <souel-bo@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 23:52:47 by souel-bo          #+#    #+#             */
-/*   Updated: 2024/11/06 15:30:30 by souel-bo         ###   ########.fr       */
+/*   Updated: 2024/11/12 08:06:14 by souel-bo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void *f(void *content)
+{
+	char *s = (char *)content;
+	if (*s >= 'a' && *s <= 'z')
+		*s -= 32;
+	return content;
+}
+void del(void *content)
+{
+	free(content);
+}
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
